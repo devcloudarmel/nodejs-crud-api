@@ -1,0 +1,26 @@
+name: CI Pipeline for index1-html
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Display
+        run: echo "Hello world, from pull_request"
+
+      - name: Notify result
+        if: always()
+        run: |
+          if [[ ${{ job.status }} == 'success' ]]; then
+            echo "CI pipeline succeeded for push!"
+          else
+            echo "CI pipeline failed for push"
+          fi
