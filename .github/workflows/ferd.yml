@@ -1,0 +1,26 @@
+name: CI Pipeline for index1-html
+
+on:
+  push:
+    branches:
+      - index1-html
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Display
+        run: echo "Hello world"
+
+      - name: Notify result
+        if: always()
+        run: |
+          if [[ ${{ job.status }} == 'success' ]]; then
+            echo "CI pipeline succeeded for push to index1-html branch!"
+          else
+            echo "CI pipeline failed for push to index1-html  branch!"
+          fi
