@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/chechout@v2
+        uses: actions/checkout@v2
 
       - name: Display
         run: echo "Hello world"
