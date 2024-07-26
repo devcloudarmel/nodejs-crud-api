@@ -21,7 +21,7 @@ jobs:
         run: sudo docker compose version
 
       - name: Minikube start --driver docker
-        run: minikub start --driver docker
+        run: minikube start --driver docker
       
       - name: Kubectl verification
         run: kubectl version
