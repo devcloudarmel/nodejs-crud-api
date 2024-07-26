@@ -14,8 +14,14 @@ jobs:
       - name: Display
         run: echo "Hello world, from pull_request"
 
-      - name: Installation Doker
+      - name: Verification Doker
         run: sudo docker --version 
 
       - name: Docker compose
         run: sudo docker compose version
+
+      - name: Minikube start --driver docker
+        run: minikub start --driver docker
+      
+      - name: Kubectl verification
+        run: kubectl version
