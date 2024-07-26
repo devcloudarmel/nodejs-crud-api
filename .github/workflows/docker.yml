@@ -1,0 +1,21 @@
+name: Docker-install
+
+on:
+  push:
+    branches:
+      - docker-html
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Display
+        run: echo "Hello world, from pull_request"
+
+      - name: Installation Doker
+        run: sudo docker --version 
+
+      - name: Docker compose
+        run: sudo docker compose version
